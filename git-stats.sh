@@ -3,7 +3,7 @@ START=18.07.2010
 END=25.07.2010
 echo "Number of commits per author:"
 git --no-pager shortlog --after=$START --before=$END  -sn --all
-AUTHORS=$( git shortlog --after=$START --before=$END  -sn --all | cut -f2 | cut -f1 -d' ' ; echo 'Unknowen')
+AUTHORS=$( git shortlog --after=$START --before=$END  -sn --all | cut -f2 | cut -f1 -d' ' ; echo 'None')
 LOGOPTS=""
 if [ "$1" == '-w' ]; then
     LOGOPTS="$LOGOPTS -w"
