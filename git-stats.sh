@@ -27,4 +27,7 @@ do
     git log $LOGOPTS --after=$START --before=$END --all --numstat --format="%n" --author=$a | cut -f1 | awk '{s+=$1} END {print s}'
     echo -n "Number of lines deleted: "
     git log $LOGOPTS --after=$START --before=$END --all --numstat --format="%n" --author=$a | cut -f2 | awk '{s+=$1} END {print s}'
+    echo -n "Number of merges: "
+    git log $LOGOPTS --after=$START --before=$END --all --merges --author=$a | grep -c '^commit'
+
 done
