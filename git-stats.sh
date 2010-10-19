@@ -3,7 +3,7 @@ START=18.07.2010
 END=25.07.2010
 echo "Number of commits per author:"
 git --no-pager shortlog --after=$START --before=$END  -sn --all
-AUTHORS=$( git shortlog --after=$START --before=$END  -sn --all | cut -f2 | cut -f1 -d' ' ; echo 'None')
+AUTHORS=$( git shortlog --after=$START --before=$END  -sn --all | cut -f2 | cut -f1 -d' ')
 LOGOPTS=""
 if [ "$1" == '-w' ]; then
     LOGOPTS="$LOGOPTS -w"
@@ -17,7 +17,7 @@ if [ "$1" == '-C' ]; then
     LOGOPTS="$LOGOPTS -C --find-copies-harder"
     shift
 fi
-for a in $AUTHORS:
+for a in $AUTHORS
 do
     echo '-------------------'
     echo "Statistics for: $a"
